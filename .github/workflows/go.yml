@@ -1,0 +1,13 @@
+name: Go Greeter
+on: [push, pull_request]
+jobs:
+  run-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+      - name: Run Script
+        run: go run program5-go-greeter/greeter.go
